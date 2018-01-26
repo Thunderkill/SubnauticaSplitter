@@ -19,12 +19,14 @@ Automatic Subnautica Time Splitter for LiveSplit
 2. Make sure you don't have any splits set-up in LiveSplit
 3. Make sure you have a mono injector, suggested injectors are below
 4. Open Subnautica and wait until you are in the main menu
-5. Inject the compiled **SubnauticaSplitter.dll** into the **Subnautica.exe** process, if the injection was successfully you should see the text "SubnauticaSplitter - Connected" on the bottom left in your Subnautica
+5. Inject the compiled **SubnauticaSplitter.dll** into the **Subnautica.exe** process, and call the method **Load** in class **Loader** with the namespace **SubnauticaSplitter**
+
+if the injection was successfull you should see the text "SubnauticaSplitter - Connected" on the bottom left in your Subnautica
 
 ### Easy Way
 1. Download the latest release from Releases
 2. Follow steps **1**, **2** and **4** from above
-3. Double-click **Inject.bat**, and you should see the text "SubnauticaSplitter - Connected" in subnautica
+3. Double-click **Inject.bat**
 
 
 ## Suggested Injectors
