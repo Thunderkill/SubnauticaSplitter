@@ -1,6 +1,12 @@
 # SubnauticaSplitter
 Automatic Subnautica Time Splitter for LiveSplit
 
+
+## Info
+* It will start the run when you watch/skip the intro cinematic
+* It will stop the run (call a split) when you click on the neptune rocket
+* It will report gametime every frame
+
 ## Requirements
 * x64 bit Mono Injector
 * LiveSplit
@@ -20,10 +26,12 @@ Automatic Subnautica Time Splitter for LiveSplit
 2. Follow steps **1**, **2** and **4** from above
 3. Double-click **Inject.bat**, and you should see the text "SubnauticaSplitter - Connected" in subnautica
 
+
 ## Suggested Injectors
 You need an x64 injector that can inject into mono, some of them are:
 * [MInjector](https://github.com/EquiFox/MInjector)
 * [MonoInjector](https://github.com/Michidu/MonoInjector)
+
 
 ## Troubleshooting
 * If you see the text "SubnauticaSplitter - Not Connected"; you don't have the LiveSplit server running or set up properly, make sure it is running on port **16834**
