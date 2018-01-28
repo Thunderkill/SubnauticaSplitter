@@ -58,6 +58,8 @@ namespace SubnauticaSplitter
                 if (pod != null && pod.startedIntroCinematic && !pod.introCinematic.cinematicModeActive && !_runStarted)
                 {
                     _runStarted = true;
+                    //Reset the current game time
+                    Time = 0;
                     _connection.StartRun();
                 }
             }
