@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Globalization;
-using System.Runtime.InteropServices;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace SubnauticaSplitter
 {
@@ -10,17 +7,26 @@ namespace SubnauticaSplitter
     {
         private TcpConnection _connection = new TcpConnection();
 
-        public float Time = 0f;
+        private float nextReconnect;
 
-        private bool _runStarted = false;
-        private bool _runEnded = false;
-        private bool _destroying = false;
+        public float Time;
+
+        private bool _runStarted;
+        private bool _runEnded;
+        private bool _destroying;
 
         /// <summary>
         /// Update is being called every frame, this is where our logic is
         /// </summary>
-        void Update()
+        private void Update()
         {
+            //If we are not connected to the client, then try to reconnect every 5 seconds
+            if (!_connection.Connected && UnityEngine.Time.time > nextReconnect)
+            {
+                _connection.Connect();
+                nextReconnect = UnityEngine.Time.time + 5f;
+            }
+
             try
             {
                 //If the gameobject is being destroyed, or the run has ended: Stop executing
@@ -64,7 +70,7 @@ namespace SubnauticaSplitter
         /// <summary>
         /// Called multiple times every frame, this is where we draw things
         /// </summary>
-        void OnGUI()
+        private void OnGUI()
         {
             if (_destroying)
                 return;
@@ -74,7 +80,7 @@ namespace SubnauticaSplitter
         /// <summary>
         /// OnDestroy is called when an object is being destroid, this function respawns itself so it wouldn't die
         /// </summary>
-        void OnDestroy()
+        private void OnDestroy()
         {
             _destroying = true;
             //Respawn our timer if subnautica tries to kill us

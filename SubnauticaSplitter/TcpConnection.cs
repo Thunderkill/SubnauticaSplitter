@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -20,8 +19,15 @@ namespace SubnauticaSplitter
 
         public TcpConnection()
         {
+            //Initialize the socket
             _client = new Socket(_endPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
+            //Connect the client
+            Connect();
+        }
+
+        public void Connect()
+        {
             try
             {
                 _client.Connect(_endPoint);
