@@ -65,7 +65,7 @@ namespace SubnauticaSplitter
             }
             catch (Exception e)
             {
-                Debug.LogError("[SubnauticaSplitter] ERROR: " + e);
+                Debug.LogError($"[SubnauticaSplitter] ERROR: {e}");
             }
         }
 
@@ -76,7 +76,7 @@ namespace SubnauticaSplitter
         {
             if (_destroying)
                 return;
-            GUI.Label(new Rect(10, Screen.height - 20, 400, 20), "SubnauticaSplitter - " + (_connection.Connected ? "Connected" : "Not Connected"));
+            GUI.Label(new Rect(10, Screen.height - 20, 400, 20), $"SubnauticaSplitter - {(_connection.Connected ? "Connected" : "Not Connected")}");
         }
         
         /// <summary>

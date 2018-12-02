@@ -34,7 +34,7 @@ namespace SubnauticaSplitter
             }
             catch (Exception e)
             {
-                Debug.LogError("[SubnauticaSplitter]: Could not establish connection to LiveSplit Server " + e);
+                Debug.LogError($"[SubnauticaSplitter]: Could not establish connection to LiveSplit Server {e}");
             }
         }
 
@@ -53,7 +53,7 @@ namespace SubnauticaSplitter
             }
             catch (Exception e)
             {
-                Debug.LogError("[SubnauticaSplitter]: Could not send packet data " + e);
+                Debug.LogError($"[SubnauticaSplitter]: Could not send packet data {e}");
             }
         }
 
